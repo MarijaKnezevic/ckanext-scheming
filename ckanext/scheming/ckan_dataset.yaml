@@ -16,11 +16,14 @@ dataset_fields:
 
   - field_name: notes
     label: Description
+    required: true
+    validators: scheming_required
     form_snippet: markdown.html
     form_placeholder: eg. Some useful notes about the data
 
   - field_name: tag_string
     label: Tags
+    required: true
     preset: tag_string_autocomplete
     form_placeholder: eg. economy, mental health, government
     help_text:
@@ -29,8 +32,10 @@ dataset_fields:
 
   - field_name: license_id
     label: License
+    required: true
+    validators: scheming_required
     form_snippet: license.html
-    help_text: License definitions and additional information can be found at http://opendefinition.org/
+    help_text: License definitions and additional information can be found at http://opendefinition.org/ Es wird empfohlen Creative Commons Zero oder Creative Commons Namensnennung für die offene Daten zu nutzen.
 
   ##### requires composite and repeating ext#######
   - field_name: author
@@ -40,6 +45,8 @@ dataset_fields:
     subfields:
       - field_name: author
         label: Author
+        required: true
+        validators: scheming_required
         form_placeholder: Joe Bloggs
       - field_name: author_email
         form_placeholder: joe@example.com
@@ -76,8 +83,8 @@ dataset_fields:
     form_snippet: organization_alone.html
     help_text: Legt fest welcher Organisation der Katalogeintrag zugeordnet ist.
   
-  - field_name: visibility
-    label: visibility
+  - field_name: owner_org
+    label: Organization
     form_snippet: visibility.html
     help_text: Legt fest wer den Katalogeintrag sehen kann.
     
@@ -134,7 +141,7 @@ dataset_fields:
         label: Hiermit bestätige ich, dass sämtliche von mir eingetragenen Daten unter die oben ausgewählte Lizenz fallen.
         
   - field_name: custom-fields
-    label: Custom Field
+    label: Benutzerdefiniertes Feld
     form_snippet: custom_form_fields.html
     
 resource_fields:
@@ -153,6 +160,8 @@ resource_fields:
 
   - field_name: format
     label: Format
+    required: true
+    validators: scheming_required
     preset: resource_format_autocomplete
 
   # restricted and composite are required
