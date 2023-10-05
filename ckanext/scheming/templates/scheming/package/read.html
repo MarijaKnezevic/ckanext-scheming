@@ -15,7 +15,7 @@
   {% if h.scheming_field_by_name(schema.dataset_fields, 'notes') and
     pkg.notes%}
     <div class="notes embedded-content">
-      {{ h.render_markdown(pkg.notes, allow_html=True) }}
+      {{ h.render_markdown(pkg.notes) }}
     </div>
   {% endif %}
 
