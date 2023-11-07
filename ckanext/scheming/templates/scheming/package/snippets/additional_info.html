@@ -16,9 +16,7 @@
   {%- for field in schema.dataset_fields -%}
     {%- if field.field_name not in exclude_fields and field.display_snippet is not none -%}
       {% if field.field_name == 'spatial' and pkg_dict.spatial %}
-          <tr>
-            <th scope="row" class="dataset-label" property="rdfs:label">{{ h.scheming_language_text(field.label) }}</th>
-     
+          <tr>     
             <td class="dataset-details" {% if field.display_property %} 
             property="{{ field.display_property}}">
             {% endif %}
@@ -26,6 +24,10 @@
             {%- snippet 'scheming/display_snippets/spatial.html', field=field, data=pkg_dict -%}
           </td>
         </tr>
+          <tr>
+            <th scope="row" class="dataset-label" property="rdfs:label">{{ _('spatial') }}</th>
+            <td class="dataset-details" property="rdf:value"><p id="para" class="myClass">{{ pkg_dict.spatial }}</p><button id="clickMe" class="clickMe btn btn-primary">+</button></td>
+          </tr>
       {% else %}
             <tr>
         <th scope="row" class="dataset-label">
