@@ -17,7 +17,7 @@
     {%- if field.field_name not in exclude_fields and field.display_snippet is not none -%}
       {% if field.field_name == 'spatial' and pkg_dict.spatial %}
           <tr>
-            <th scope="row" class="dataset-label" property="rdfs:label">{{ _('spatial') }}</th>
+            <th scope="row" class="dataset-label" property="rdfs:label">{{ _('Räumliche Ausdehnung (Geometrie)') }}</th>
             <td class="dataset-details" property="rdf:value"><p id="para" class="myClass">{{ pkg_dict.spatial }}</p><button id="clickMe" class="clickMe btn btn-primary">+</button></td>
           </tr>
       {% else %}
